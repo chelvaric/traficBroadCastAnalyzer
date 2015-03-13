@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>BeMobile.Global</id>
+    <version>1.0.14</version>
+    <title>BeMobile.Global</title>
+    <authors>Pieter Callewaert,Egon Olieux</authors>
+    <owners>Pieter Callewaert,Egon Olieux</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Global Be-Mobile library containing cross-project classes.</description>
+    <releaseNotes>1.0.14
+------
+StringExtensions bug fix.
+
+1.0.13
+------
+Fix nullable reliability
+
+1.0.12
+------
+Extended TrafficEvent with new elements
+
+1.0.11
+------
+- Added HttpClient class.
+- Added HttpWebRequestExtensions to edit/override HTTP headers.
+- Added SerializableDictionary
+- Added Hash class
+- Added SecureRandom class
+
+1.0.10
+------
+- Add OpenLR
+
+1.0.9
+-----
+- Added extension methods .
+- Added generic XML serializer.
+- Added custom exception class to encapsulate errors from this library to the outside world.
+- Added documentation for extension methods and generic XML serializer.
+
+1.0.8
+-----
+Updated TrafficEvent (InBothDirection and evolution)
+
+1.0.7
+-----
+Updated TrafficEvent
+
+1.0.6
+-----
+Added CalculateTravelTime
+
+1.0.5
+-----
+Updated Time tools with datetime kind
+
+1.0.4
+-----
+Added MyWebClient and Wgs84
+
+1.0.2
+-----
+- Added binary converter
+- Added traffic helper
+
+1.0.1
+-----
+- Updated TimeTools
+- Added BlockingQueue</releaseNotes>
+    <tags>global general generic time queue extension methods dto xml serialize web httpclient security</tags>
+  </metadata>
+</package>

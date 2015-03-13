@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>BeMobile.Parsers</id>
+    <version>1.0.11</version>
+    <authors>Pieter Callewaert,Jens De Valck,Bert De Rijck</authors>
+    <owners>Pieter Callewaert,Jens De Valck,Bert De Rijck</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generic library to parse be-mobile formats</description>
+    <releaseNotes>1.0.11
+------
+Extended traffic events parser
+
+1.0.7
+-----
+Added TrafficEventsXmlParser.ParseDocument() overload to parse directly from an XDocument.
+1.0.6
+-----
+Updated TrafficEventsXmlParser
+
+1.0.5
+-----
+- Changed Source* fields in Link object to ulong
+
+1.0.4
+-----------
+Added TrafficEventsXmlParser
+1.0.3
+-----------
+Added parsing of GPSDumps files
+1.0.2
+-----
+- Fixed bug in ParseFile
+
+1.0.1
+-----
+Added DumpFeedParser
+
+1.0.0
+-----
+First release</releaseNotes>
+    <tags>general tools time</tags>
+    <dependencies>
+      <dependency id="CsvHelper" version="2.6.1" />
+      <dependency id="log4net" version="2.0.3" />
+      <dependency id="BeMobile.Global" version="1.0.13" />
+    </dependencies>
+  </metadata>
+</package>

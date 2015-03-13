@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BeMobile.Rds</name>
+    </assembly>
+    <members>
+        <member name="T:BeMobile.Rds.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.FileNotFound">
+            <summary>
+              Looks up a localized string similar to The file was not found..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.FilePathCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The file path cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.InvalidRdsGroupByteStringFormat">
+            <summary>
+              Looks up a localized string similar to One or more RDS group byte strings are invalid..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.InvalidRdsGroupLength">
+            <summary>
+              Looks up a localized string similar to The RDS group must contain 8 bytes (64 bits)..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.InvalidServiceKeyTableFormat">
+            <summary>
+              Looks up a localized string similar to .
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.InvalidToStringFormat">
+            <summary>
+              Looks up a localized string similar to The given format is invalid..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventCannotHaveExceptionIfNotDecoded">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event cannot have an exception if it is not decoded..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventCannotStartWithSubseq">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event cannot start with a subsequent group..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventContinuityIndexMismatch">
+            <summary>
+              Looks up a localized string similar to The Continuity Index (CI) of the current TMC multi-group event group does not match the Continuity Index of the previous group..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventDataFieldsCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event &apos;dataFields&apos; argument cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventFirstCannotOccurBeforeFirst">
+            <summary>
+              Looks up a localized string similar to The first group the the TMC multi-group event cannot occur before the first group of another TMC multi-group event..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventGroupsCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event &apos;groups&apos; argument cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventGroupSequenceIdMismatch">
+            <summary>
+              Looks up a localized string similar to The current Group Sequence ID (GSI) of the TMC multi-group event is not subsequent to the previous Group Sequence ID..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventInvalidGroupCount">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event should contain between 2 and 5 groups..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventLastGroupSequenceIdNotZero">
+            <summary>
+              Looks up a localized string similar to The Group Sequence ID of the last group of the TMC multi-group event must be &apos;0&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventMetadataCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event &apos;metadata&apos; argument cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventMetadataIsDecodedCannotBeFalse">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event  metadata &apos;IsDecoded&apos; property cannot be &apos;false&apos; if the multi-group data fields are decoded..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventMultipleSubseqSecondGroups">
+            <summary>
+              Looks up a localized string similar to The TMC multi-group event cannot contain more than one &apos;second&apos; subsequent group..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventSubseqNotSecondCannotOccurAfterFirst">
+            <summary>
+              Looks up a localized string similar to The &apos;non-second&apos; subsequent group of the TMC multi-group event cannot occur after the first group..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.MultiGroupTmcEventSubseqSecondCannotOccurAfterSubseqNotSecond">
+            <summary>
+              Looks up a localized string similar to The &apos;second&apos; subsequent group of the TMC multi-group event cannot occur after the &apos;non-second&apos; subsequent group..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.RdsGroupBytesCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The RDS group bytes cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.RdsGroupByteStringCannotBeNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to One or more RDS group byte string are null or empty..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.RdsGroupCannotBeNotDecoded">
+            <summary>
+              Looks up a localized string similar to The RDS group cannot be not decoded if the RDS group data fields are decoded..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.RdsGroupCannotHaveExceptionIfNotDecoded">
+            <summary>
+              Looks up a localized string similar to The RDS group cannot have an exception if it is not decoded..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.RdsGroupDataFieldsCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The RDS group datafields cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.RdsGroupMetadataCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The RDS group metadata cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Rds.Properties.Resources.RdsGroupNotSupported">
+            <summary>
+              Looks up a localized string similar to The RDS group is not supported..
+            </summary>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroupDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Oda.Group3AOdaDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Oda.Group3AOda8ATmcDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroupDecoderException.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.TmcEncryptionServiceKeyTable.ImportFromFile(System.String)">
+            <summary>
+                Imports all service key table entries from a file.
+                Each entry should be on a new line and each value should be separated by a comma (CSV).
+                The table should only contain one service key (32 entries in total).
+                For example: 'ServiceKey,EncryptionId,RotateRightValue,StartBit,XorValue', '1,15,0x05,2,0xC5'.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.FormatException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.MultiGroupTmcEvent.#ctor(System.Collections.Generic.List{BeMobile.Rds.RdsGroup})">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.MultiGroupTmcEvent.#ctor(BeMobile.Rds.Tmc.MultiGroupTmcEventMetadata,System.Collections.Generic.List{BeMobile.Rds.RdsGroup})">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.MultiGroupTmcEvent.#ctor(BeMobile.Rds.Tmc.MultiGroupTmcEventMetadata,System.Collections.Generic.List{BeMobile.Rds.RdsGroup},BeMobile.Rds.Tmc.MultiGroupTmcEventDataFields)">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.MultiGroupTmcEvent.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroupMetadata.#ctor(System.DateTime,System.Boolean,BeMobile.Rds.RdsGroupDecoderException)">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroupMetadata.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Oda.Group3AOda8ATmcVar2DataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.#ctor(System.Byte[])">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.#ctor(System.String)">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.#ctor(BeMobile.Rds.RdsGroupMetadata,System.Byte[])">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.#ctor(BeMobile.Rds.RdsGroupMetadata,System.String)">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.#ctor(BeMobile.Rds.RdsGroupMetadata,System.Byte[],BeMobile.Rds.RdsGroupDataFields)">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.#ctor(BeMobile.Rds.RdsGroupMetadata,System.String,BeMobile.Rds.RdsGroupDataFields)">
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.ImportFromFile(System.String)">
+            <summary>
+                Imports RDS rdsGroups represented as a hexadecimal byte string and an optional timestamp from a file.
+                Each RDS group should be on a new line and each value should be separated by a comma (CSV).
+                For example: 'Timestamp,BytesHexString', '2015-03-05T09:56:05,0x721005290ECD544C'.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.RdsGroup.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcEncryptionDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcEncryptionVar0DataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcEventDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcTuningDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcEventMultiGroupFirstDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcEventMultiGroupSubseqDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcTuningVar5DataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcTuningVar4DataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Oda.Group3AOda8ATmcVar0DataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Oda.Group3AOda8ATmcVar1DataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcEventSingleGroupDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.Group8ATmcTuningVar6DataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:BeMobile.Rds.Tmc.MultiGroupTmcEventDataFields.ToString(System.String)">
+            <param name="format">The string format; either 'short' of 'long'.</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,768 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BeMobile.Global</name>
+    </assembly>
+    <members>
+        <member name="M:BeMobile.Global.Binary.Converter.GetTotalSamples(System.UInt32)">
+            <summary>
+            Gets the total samples calculated from ObservationCoverage.
+            </summary>
+            <param name="observationCoverage">The observation coverage.</param>
+            <returns>unsigned integer representing the number of samples</returns>
+        </member>
+        <member name="M:BeMobile.Global.Binary.Converter.GetSeperateSamples(System.UInt32,System.UInt32@,System.UInt32@,System.UInt32@,System.UInt32@,System.UInt32@,System.UInt32@)">
+            <summary>
+            Unpacks observation coverage to number of samples in 5 minute slices
+            </summary>
+            <param name="observationCoverage">given observation coverage</param>
+            <param name="numberOfSamples00">output parameter containing the number of samples in 0-5 minutes</param>
+            <param name="numberOfSamples05">output parameter containing the number of samples in 5-10 minutes</param>
+            <param name="numberOfSamples10">output parameter containing the number of samples in 10-15 minutes</param>
+            <param name="numberOfSamples15">output parameter containing the number of samples in 15-20 minutes</param>
+            <param name="numberOfSamples20">output parameter containing the number of samples in 20-25 minutes</param>
+            <param name="numberOfSamples25">output parameter containing the number of samples in 25-30 minutes</param>
+            <returns></returns>
+        </member>
+        <member name="M:BeMobile.Global.Binary.Converter.StringToByteArray(System.String)">
+            <summary>
+            Convert hex string to byte[] data
+            </summary>
+            <param name="hex">hex string</param>
+            <returns></returns>
+        </member>
+        <member name="M:BeMobile.Global.Binary.Converter.Get16BitMapAttribute(System.Boolean,System.Byte,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="bInJam">boolean if road segment in jam</param>
+            <param name="nNumberOfSamples">number of samples on road segment</param>
+            <param name="fLevelOfServicePercent">level of service value, value between 0 and 100</param>
+            <param name="fSpeedKph">speed in kph, max value 155</param>
+            <returns>16bit map attribute (giscloud)</returns>
+        </member>
+        <member name="T:BeMobile.Global.Collections.SerializableDictionary`2">
+            <summary>
+                A generic dictionary which is serializable by the <see cref="T:BeMobile.Global.Serialization.XmlSerializer`1"/> class.
+            </summary>
+            <typeparam name="TKey">The key type of the dictionary.</typeparam>
+            <typeparam name="TValue">The value type of the dictionary.</typeparam>
+        </member>
+        <member name="T:BeMobile.Global.Cryptography.Hash">
+            <summary>
+                Common hashing algorithms.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Cryptography.Hash.CalculateSha256(System.String)">
+            <summary>
+                Calculates the SHA256 hash of a string.
+            </summary>
+            <param name="s">The string to be hashed.</param>
+            <returns>The SHA256 hash of the string.</returns>
+        </member>
+        <member name="T:BeMobile.Global.Cryptography.SecureRandom">
+            <summary>
+                Generate secure random patterns.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Cryptography.SecureRandom.GetRandomHexadecimal(System.Int32)">
+            <summary>
+                Gets a random hexadecimal string.
+            </summary>
+            <param name="byteCount">The length of the hexadecimal string in bytes.</param>
+            <returns>The random generated hexadecimal string.</returns>
+        </member>
+        <member name="T:BeMobile.Global.Serialization.XmlSerializer`1">
+            <summary>
+                Serialize and deserialize to/from XML.
+            </summary>
+            <remarks>
+                Due to limitations <see cref="T:BeMobile.Global.Collections.SerializableDictionary`2"/> cannot be serialized.
+                Consider using <see cref="T:System.Xml.Serialization.XmlSerializer"/> instead.
+            </remarks>
+            <typeparam name="T">The object to serialize or deserialize.</typeparam>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.SerializeToString(`0)">
+            <summary>
+                Serializes a given object to an XML string.
+            </summary>
+            <param name="source">The object to serialize.</param>
+            <returns>The serialized object as a string.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.SerializeToString(`0,System.String)">
+            <summary>
+                Serializes a given object to an XML string.
+            </summary>
+            <param name="source">The object to serialize.</param>
+            <param name="xmlRoot">The XML root attribute (optional).</param>
+            <returns>The serialized object as a string.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.SerializeToFile(System.String,`0)">
+            <summary>
+                Serializes a given object to an XML file.
+            </summary>
+            <param name="filePath">The path of the XML file.</param>
+            <param name="source">The object to serialize.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.SerializeToFile(System.String,`0,System.String)">
+            <summary>
+                Serializes a given object to an XML file.
+            </summary>
+            <param name="filePath">The path of the XML file.</param>
+            <param name="source">The object to serialize.</param>
+            <param name="xmlRoot">The XML root attribute (optional).</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.DeserializeFromString(System.String)">
+            <summary>
+                Deserializes a given XML string to its object.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.DeserializeFromString(System.String,System.String)">
+            <summary>
+                Deserializes a given XML string to its object.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <param name="xmlRoot">The XML root attribute (optional).</param>
+            <returns>The deserialized object.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.DeserializeFromFile(System.String)">
+            <summary>
+                Deserializes a given XML file to its object.
+            </summary>
+            <param name="filePath">The path of the XML file.</param>
+            <returns>The deserialized object.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Serialization.XmlSerializer`1.DeserializeFromFile(System.String,System.String)">
+            <summary>
+                Deserializes a given XML file to its object.
+            </summary>
+            <param name="filePath">The path of the XML file.</param>
+            <param name="xmlRoot">The XML root attribute of the XML file.</param>
+            <returns>The deserialized object.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.ProviderID">
+            <summary>
+            Customer identifier.
+            </summary>
+            <remarks>
+            This field links the record with the CRM Content Providers table
+            </remarks>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.VehicleID">
+            <summary>
+            An identification of the vehicle producing the data
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.GMTDateTime">
+            <summary>
+            The GMT DateTime the sample was generated 
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.Latitude">
+            <summary>
+            Latitude in WGS84 decimal format
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.Longitude">
+            <summary>
+            Longitude in WGS84 decimal format
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.Speed">
+            <summary>
+            The speed of the vehicle is driving.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.Heading">
+            <summary>
+            The heading where the vehicle is driving too.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.EngineState">
+            <summary>
+            The state of the engine
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.DSTSetting">
+            <summary>
+            Daylight savings time setting (OBSOLETE)
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.VehicleType">
+            <summary>
+            Type of vehicle (taxi, truck,...)
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.ReceivedTime">
+            <summary>
+            The time we received the data
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.GpsObject.Accuracy">
+            <summary>
+            The accuracy of the data
+            </summary>
+        </member>
+        <member name="T:BeMobile.Global.DTO.HistoryObject">
+            <summary>
+            Data object for History On Segment
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.DTO.HistoryObject.MapId">
+            <summary>
+            Gets or sets the map id.
+            </summary>
+            <value>
+            The map id.
+            </value>
+        </member>
+        <member name="P:BeMobile.Global.DTO.HistoryObject.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id from a segment or link.
+            </value>
+        </member>
+        <member name="P:BeMobile.Global.DTO.HistoryObject.TimeStamp">
+            <summary>
+            Gets or sets the time stamp.
+            </summary>
+            <value>
+            The time stamp of the recording.
+            </value>
+        </member>
+        <member name="P:BeMobile.Global.DTO.HistoryObject.AggregatedTtMs">
+            <summary>
+            Gets or sets the aggregated traveltime.
+            </summary>
+            <value>
+            The aggregated traveltime in ms.
+            </value>
+        </member>
+        <member name="P:BeMobile.Global.DTO.HistoryObject.ObservationCoverage">
+            <summary>
+            Gets or sets the observation coverage.
+            </summary>
+            <value>
+            The observation coverage (custom algorithm from traffic).
+            </value>
+        </member>
+        <member name="P:BeMobile.Global.DTO.HistoryObject.SpeedKph">
+            <summary>
+            Gets or sets the speed.
+            </summary>
+            <value>
+            The speed in kilometers per hour
+            </value>
+        </member>
+        <member name="T:BeMobile.Global.Extensions.BitArrayExtensions">
+            <summary>
+                Extension methods for <see cref="T:System.Collections.BitArray"/>.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.BitArrayExtensions.GetRange(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+                Gets a specific range of the given bit array.
+                The most significant bit is at index 0.
+                The end index bit is included (e.g. bit range 1 - 0 is 2 bits).
+            </summary>
+            <param name="bitArray">The bit array to get the range from.</param>
+            <param name="beginIndex">The begin index of the bit array.</param>
+            <param name="endIndex">The end index of the bit array.</param>
+            <returns>The specific range of the given bit array.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.BitArrayExtensions.ToByte(System.Collections.BitArray)">
+            <summary>
+                Converts the given bit array to a byte.
+            </summary>
+            <param name="bitArray">The bit array to convert.</param>
+            <returns>The converted bit array as a byte.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.BitArrayExtensions.ToInt16(System.Collections.BitArray)">
+            <summary>
+                Converts the given bit array to a 16-bit integer.
+            </summary>
+            <param name="bitArray">The bit array to convert.</param>
+            <returns>The converted bit array as a 16-bit integer.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.BitArrayExtensions.ToInt32(System.Collections.BitArray)">
+            <summary>
+                Converts the given bit array to a 32-bit integer.
+            </summary>
+            <param name="bitArray">The bit array to convert.</param>
+            <returns>The converted bit array as a 32-bit integer.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:BeMobile.Global.Extensions.ByteExtensions">
+            <summary>
+                Extension methods for <see cref="T:System.Byte"/>.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.ByteExtensions.GetBitRange(System.Byte,System.Int32,System.Int32)">
+            <summary>
+                Gets the value of the given byte between the bit indexes.
+                The most significant bit is at index 0.
+                The end index bit is included (e.g. bit range 1 - 0 is 2 bits).
+            </summary>
+            <param name="b">The byte to get the value from.</param>
+            <param name="beginIndex">Begin bit index.</param>
+            <param name="endIndex">End bit index.</param>
+            <returns>The value from the byte between bit indexes.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:BeMobile.Global.Extensions.HttpWebRequestExtensions">
+            <summary>
+                Extension methods for <see cref="T:System.Net.HttpWebRequest"/>.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.HttpWebRequestExtensions.SetHeader(System.Net.HttpWebRequest,System.String,System.String)">
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.HttpWebRequestExtensions.SetHeaders(System.Net.HttpWebRequest,System.Collections.Specialized.NameValueCollection)">
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:BeMobile.Global.Extensions.Int16Extensions">
+            <summary>
+                Extension methods for <see cref="T:System.Int16"/>.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.Int16Extensions.GetBytes(System.Int16,System.Boolean)">
+            <summary>
+                Gets the bytes from a 16-bit integer number
+            </summary>
+            <param name="s">The 16-bit integer number to get the bytes from.</param>
+            <param name="bigEndian">
+                Indicator whether the returned bytes have to be in big or little endian format.
+            </param>
+            <returns>The bytes from the 16-bit integer number.</returns>
+        </member>
+        <member name="T:BeMobile.Global.Extensions.Int32Extensions">
+            <summary>
+                Extension methods for <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.Int32Extensions.GetBytes(System.Int32,System.Boolean)">
+            <summary>
+                Gets the bytes from a 32-bit integer number
+            </summary>
+            <param name="i">The 32-bit integer number to get the bytes from.</param>
+            <param name="bigEndian">
+                Indicator whether the returned bytes have to be in big or little endian format.
+            </param>
+            <returns>The bytes from the 32-bit integer number.</returns>
+        </member>
+        <member name="T:BeMobile.Global.Extensions.LinqExtensions">
+            <summary>
+                Extension methods for LINQ.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.LinqExtensions.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+                Gets a distinct collection by a certain field of the type contained by the given collection.
+            </summary>
+        </member>
+        <member name="T:BeMobile.Global.Extensions.StringExtensions">
+            <summary>
+                Extension methods for <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.StringExtensions.PrependWhitespace(System.String,System.Int32)">
+            <summary>
+                Adds whitespace to the beginning of a string using spaces. 
+            </summary>
+            <param name="s">The string to add the spaces to.</param>
+            <param name="length">The length of the spaces to add.</param>
+            <returns>The new string containing the added spaces.</returns>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.StringExtensions.AppendWhitespace(System.String,System.Int32)">
+            <summary>
+                Adds whitespace to the end of a string using spaces.
+            </summary>
+            <param name="s">The string to add the spaces to.</param>
+            <param name="length">The length of the spaces to add.</param>
+            <returns>The new string containing the added spaces.</returns>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.StringExtensions.PrependAndAppendWhitespace(System.String,System.Int32)">
+            <summary>
+                Adds whitespace to both the beginning and end of a string using spaces.
+            </summary>
+            <param name="s">The string to add the spaces to.</param>
+            <param name="length">The length of the spaces to add.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.StringExtensions.Center(System.String,System.Int32)">
+            <summary>
+                Centers a given string using spaces over the given width.
+            </summary>
+            <param name="s">The string to center.</param>
+            <param name="width">The width of the centered string.</param>
+            <returns>The centered string.</returns>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.StringExtensions.GetBytesFromHexString(System.String)">
+            <summary>
+                Gets the bytes from a hexadecimal number represented as a string.
+            </summary>
+            <param name="s">The hexadecimal number represented as a string (with optional prefex '0x').</param>
+            <returns>The bytes from the hexadecimal number.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.StringExtensions.IsJson(System.String)">
+            <summary>
+                Checks whether a given string is JSON formatted.
+            </summary>
+            <param name="s">The string to check.</param>
+            <returns>Boolean indicating whether the given string is JSON formatted.</returns>
+        </member>
+        <member name="M:BeMobile.Global.Extensions.StringExtensions.Wrap(System.String,System.Int32)">
+            <summary>
+                Wrap the given string by the given width.
+            </summary>
+            <param name="s">The string to wrap.</param>
+            <param name="width">The maximum width of each line.</param>
+            <returns>The wrapped string.</returns>
+        </member>
+        <member name="T:BeMobile.Global.FTPParseTool">
+            <summary>
+            Parses FTP 
+            Developped by Wim Vanbelle
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.FTPParseTool.GetFastSnap(System.String)">
+            <summary>
+            Parses an FTP URL into its components
+            </summary>
+            <param name="fastSnap">The input ftp:// URL</param>
+            <returns>A Dictionary containing host, port, username, password and path</returns>
+        </member>
+        <member name="T:BeMobile.Global.GeneralTools">
+            <summary>
+            General tools for working
+            </summary>
+        </member>
+        <member name="F:BeMobile.Global.GeneralTools.DecimalSeperator">
+            <summary>
+            The common Decimal seeparator we use in Be-Mobile.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.GeneralTools.NVL(System.Object,System.Object)">
+            <summary>
+            Checks if a variable is null. If so, replace it with the Replacement value.
+            </summary>
+            <param name="i">object to check</param>
+            <param name="replacement">replacement in case of NULL</param>
+            <returns></returns>
+        </member>
+        <member name="P:BeMobile.Global.MyWebClient.Timeout">
+            <summary>
+            Time in milliseconds
+            </summary>
+        </member>
+        <member name="T:BeMobile.Global.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.ArgumentCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The given argument cannot be &apos;null&apos;..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.BeginIndexCannotBeSmallerThanEndIndex">
+            <summary>
+              Looks up a localized string similar to The begin index cannot be smaller than the end index..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.BeginIndexOutOfBoundaries">
+            <summary>
+              Looks up a localized string similar to The begin index is out of boundaries..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.EndIndexOutOfBoundaries">
+            <summary>
+              Looks up a localized string similar to The end index is out of boundaries..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.HttpClientCouldNotConnect">
+            <summary>
+              Looks up a localized string similar to Could not connect to server..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.HttpClientError">
+            <summary>
+              Looks up a localized string similar to The HTTP client encountered an error..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.HttpClientRequestBodyEncodingCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The HTTP client request body encoding cannot be &apos;null&apos; if the request body is not empty..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.HttpClientRequestUrlCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The HTTP client request URL cannot be &apos;null&apos; or empty..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.InvalidBitArrayLength16">
+            <summary>
+              Looks up a localized string similar to The length of the BitArray cannot be longer than 16 bits..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.InvalidBitArrayLength32">
+            <summary>
+              Looks up a localized string similar to The length of the BitArray cannot be longer than 32 bits..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.InvalidBitArrayLength8">
+            <summary>
+              Looks up a localized string similar to The length of the BitArray cannot be longer than 8 bits..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.InvalidSaltByteCount">
+            <summary>
+              Looks up a localized string similar to The password salt must be at least 1 byte long..
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Properties.Resources.StringLengthNotEvenNumber">
+            <summary>
+              Looks up a localized string similar to The length of the string must be an even number as 2 hexadecimal digits represent a single byte..
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.TimeTools.ConvertDateToUnixEpoch(System.DateTime)">
+            <summary>
+            Converts the datetime to seconds since UNIX epoch.
+            </summary>
+            <param name="dateTime">The date time.</param>
+            <returns>seconds since UNIX epoch</returns>
+        </member>
+        <member name="M:BeMobile.Global.TimeTools.ConvertUnixEpochToDate(System.Int32)">
+            <summary>
+            Converts seconds since UNIX epoch to datetime.
+            </summary>
+            <param name="epoch">The epoch.</param>
+            <returns>datetime</returns>
+        </member>
+        <member name="M:BeMobile.Global.TimeTools.ConvertUtcTimeToTimeZone(System.DateTime,System.String)">
+            <summary>
+            Converts the UTC time to the local time of the specified time zone.
+            </summary>
+            <param name="dateTime">The utc date time.</param>
+            <param name="toTimeZoneDesc">The time zone to convert to</param>
+            <returns>local date time</returns>
+        </member>
+        <member name="M:BeMobile.Global.TimeTools.ConvertTimeZoneToUtcTime(System.DateTime,System.String)">
+            <summary>
+            Converts the local time of a specified time zone to UTC time.
+            </summary>
+            <param name="dateTime">The local date time.</param>
+            <param name="fromTimeZoneDesc">The timezone the local date time is in</param>
+            <returns>utc date time</returns>
+        </member>
+        <member name="M:BeMobile.Global.TimeTools.GetTimeZoneNow(System.String)">
+            <summary>
+            Gets the current local time in the specified time zone
+            </summary>
+            <param name="timeZone">The time zone.</param>
+            <returns>the current local time in the specified time zone</returns>
+        </member>
+        <member name="M:BeMobile.Global.Traffic.Helper.CalculateSpeed(System.Int32,System.Int32)">
+            <summary>
+            Calculate the speed when a length (meters is given and a traveltime)
+            You can also use milimeters and mili seconds (both mili!)
+            </summary>
+            <param name="length">length in meters</param>
+            <param name="traveltime">traveltime in seconds</param>
+            <returns>speed in kph</returns>
+        </member>
+        <member name="M:BeMobile.Global.Traffic.Helper.CalculateTravelTime(System.Int32,System.Single)">
+            <summary>
+            Calculate the traveltime when a speed en and length is given
+            </summary>
+            <param name="length">length in meters</param>
+            <param name="speed">speed in km/h</param>
+            <returns></returns>
+        </member>
+        <member name="T:BeMobile.Global.Utils.UriUtil">
+            <summary>
+                Utility class for <see cref="T:System.Uri"/>.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Utils.UriUtil.Combine(System.String,System.String)">
+            <summary>
+                Combines an URI and a relative path.
+            </summary>
+            <param name="uri">The URI.</param>
+            <param name="path">The relative path.</param>
+            <returns>The combined URI.</returns>
+        </member>
+        <member name="M:BeMobile.Global.Utils.UriUtil.Combine(System.Uri,System.String)">
+            <summary>
+                Combines an URI and a relative path.
+            </summary>
+            <param name="uri">The URI</param>
+            <param name="path">The relative path.</param>
+            <returns>The combined URI.</returns>
+        </member>
+        <member name="T:BeMobile.Global.Web.HttpClient">
+            <summary>
+                HTTP client.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Web.HttpClient.GetResponse(BeMobile.Global.Web.HttpClientRequest)">
+            <summary>
+                Performs a HTTP request and get the HTTP response.
+            </summary>
+            <param name="httpClientRequest"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:BeMobile.Global.Web.HttpClientException"></exception>
+        </member>
+        <member name="T:BeMobile.Global.Web.HttpClientException">
+            <summary>
+                Exception thrown by the <see cref="T:BeMobile.Global.Web.HttpClient"/> class.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Web.HttpClientException.#ctor">
+            <summary>
+                Initializes an instance of the <see cref="T:BeMobile.Global.Web.HttpClientException"/> class.
+            </summary>
+        </member>
+        <member name="M:BeMobile.Global.Web.HttpClientException.#ctor(System.String)">
+            <summary>
+                Initializes an instance of the <see cref="T:BeMobile.Global.Web.HttpClientException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="M:BeMobile.Global.Web.HttpClientException.#ctor(System.String,System.Exception)">
+            <summary>
+                Initializes an instance of the <see cref="T:BeMobile.Global.Web.HttpClientException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:BeMobile.Global.Web.HttpClientRequest">
+            <summary>
+                The request of the <see cref="T:BeMobile.Global.Web.HttpClient"/> class.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientRequest.Method">
+            <summary>
+                The request method.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientRequest.Url">
+            <summary>
+                The request URL.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientRequest.Headers">
+            <summary>
+                The request headers (optional).
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientRequest.Encoding">
+            <summary>
+                The encoding of the request (optional).
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientRequest.Body">
+            <summary>
+                The request body (optional).
+            </summary>
+        </member>
+        <member name="T:BeMobile.Global.Web.HttpMethod">
+            <summary>
+                HTTP methods.
+            </summary>
+        </member>
+        <member name="F:BeMobile.Global.Web.HttpMethod.Head">
+            <summary>
+                HTTP HEAD.
+            </summary>
+        </member>
+        <member name="F:BeMobile.Global.Web.HttpMethod.Get">
+            <summary>
+                HTTP GET.
+            </summary>
+        </member>
+        <member name="F:BeMobile.Global.Web.HttpMethod.Post">
+            <summary>
+                HTTP POST.
+            </summary>
+        </member>
+        <member name="F:BeMobile.Global.Web.HttpMethod.Put">
+            <summary>
+                HTTP PUT.
+            </summary>
+        </member>
+        <member name="F:BeMobile.Global.Web.HttpMethod.Delete">
+            <summary>
+                HTTP DELETE.
+            </summary>
+        </member>
+        <member name="F:BeMobile.Global.Web.HttpMethod.Options">
+            <summary>
+                HTTP OPTIONS.
+            </summary>
+        </member>
+        <member name="T:BeMobile.Global.Web.HttpClientResponse">
+            <summary>
+                The response of the <see cref="T:BeMobile.Global.Web.HttpClient"/> class.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientResponse.StatusCode">
+            <summary>
+                The response status code.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientResponse.StatusDescription">
+            <summary>
+                The response status description.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientResponse.Headers">
+            <summary>
+                The response headers.
+            </summary>
+        </member>
+        <member name="P:BeMobile.Global.Web.HttpClientResponse.Body">
+            <summary>
+                The response body.
+            </summary>
+        </member>
+    </members>
+</doc>
