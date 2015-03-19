@@ -32,7 +32,11 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.TrafficEventFeeds
 
         public void Stop()
         {
-            this.IsRunning = false;
+            if (this.IsRunning)
+            {
+                this.IsRunning = false;
+                this.GroupFeedProcessor.Stop();
+            }
         }
 
         public void Dispose()

@@ -10,6 +10,8 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.TrafficEvents
         public int LocationCode { get; internal set; }
         public TmcCodingDirection CodingDirection { get; internal set; }
         public List<TmcEventCodeHistoryEntry> EventCodeHistory { get; internal set; }
+
+        public Comparing comparer { get; internal set; }
         public object Source { get; internal set; }
     }
 }

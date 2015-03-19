@@ -9,6 +9,7 @@ using System.Collections.Concurrent;
 using System.Threading;
 using System.Globalization;
 using BeMobile.Rds;
+using BeMobile.Rds.Tmc;
 using BeMobile.TrafficBroadcastAnalyzerService;
 using BeMobileTcpStreamCopy;
 
@@ -22,11 +23,18 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.RdsDecodeingAndStream
         public static void StartDecoding()
         {
             List<Packet> packets = new List<Packet>();
-            RdsGroupDecoderConfiguration config = new RdsGroupDecoderConfiguration();
-            config.DecodeMultiGroups = true;
-            config.Group3AOdaThreshold = 20;
-            config.TmcEncryption = false;
+            RdsGroupDecoderConfiguration config = new RdsGroupDecoderConfiguration
+            {
+                DecodeMultiGroups = true,
+                Group3AOdaThreshold = 20,
+                TmcEncryption = false
+
+
+            };
+
+            
             RdsGroupDecoder decoder = new RdsGroupDecoder(config);
+         
             
             while (true)
             {
@@ -52,10 +60,21 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.RdsDecodeingAndStream
 
                             var group = new RdsGroup(temp.Message);
                             decoder.Decode(group);
-                            if (group.Metadata.IsDecoded)
+                            
+                          
+                            
+                            if (group.Metadata.IsDecoded && group.Metadata.Exception == null  )
                             {
-                                DecodedGroupfeed.Enqueue(group);
+                                
+                                
                                // Console.WriteLine(group.DataFields.ProgrammeId);
+                                
+                                    DecodedGroupfeed.Enqueue(group);
+                                    
+                             
+                                
+
+                              
                             }
 
 

@@ -17,7 +17,7 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.TrafficEventFeeds
 {
     internal sealed class RdsTmcReferenceTrafficEventFeedProcessor : IDisposable
     {
-        private const int processingTimerInterval = 10000;
+        private const int processingTimerInterval = 40000;
         private readonly RdsTmcConfigurationEntry configurationEntry;
         private readonly RepositoryManager repositoryManager;
         private readonly Timer processingTimer;
@@ -76,9 +76,12 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.TrafficEventFeeds
             {
                 return;
             }
-            this.isProcessing = true;
-            await this.ProcessTrafficEvents();
-            this.isProcessing = false;
+            if (!TrafficBroadcastAnalyzerService.isCompatring)
+            {
+                this.isProcessing = true;
+                await this.ProcessTrafficEvents();
+                this.isProcessing = false;
+            }
         }
 
         private async Task ProcessTrafficEvents()
@@ -91,7 +94,7 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.TrafficEventFeeds
                 var result = await this.repositoryManager.SmartDownloadToString(
                     BeMobileFiles.TMCEventsXml,
                     this.configurationEntry.ReferenceTrafficEventsMapId,
-                    DateTime.Now - new TimeSpan(0,0,1,0));
+                    DateTime.MinValue + new TimeSpan(0,0,5,0));
                 if (result.NewData && result.Data != null)
                 {
 
@@ -131,17 +134,25 @@ namespace BeMobile.TrafficBroadcastAnalyzerService.TrafficEventFeeds
                             {
                                 entry.Extent = trafficEvent.TmcExtent.Value;
                             }
+                            entry.Timestamp = DateTime.Now;
                             temp.EventCodeHistory.Add(entry);
+                            
 
-
-                        }
+                        }   
 
                         temp.Source = trafficEvent;
+                      
+                       TrafficEventFeed.TrafficEvents.Add(temp);
 
-                        TrafficEventFeed.TrafficEvents.Add(temp);
+                        
+                        
+                            
+                        
+                        
 
                     }
-                    Console.WriteLine(TrafficEventFeed.TrafficEvents.Count);
+
+                    
                 }
 
                 

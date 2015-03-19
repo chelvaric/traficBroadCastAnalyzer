@@ -100,6 +100,7 @@
     <Compile Include="TrafficEventFeeds\RdsTmcUecpMessageTrafficEventMetadata.cs" />
     <Compile Include="TrafficEventFeeds\RdsTmcUecpMessageTrafficEventProcessor.cs" />
     <Compile Include="TrafficEventFeeds\RdsTmcReferenceTrafficEventFeedMetadata.cs" />
+    <Compile Include="TrafficEvents\Comparing.cs" />
     <Compile Include="TrafficEvents\TmcTrafficEvent.cs" />
     <Compile Include="TrafficBroadcastAnalyzerService.cs" />
     <Compile Include="TrafficEvents\TmcEventCodeHistoryEntry.cs" />

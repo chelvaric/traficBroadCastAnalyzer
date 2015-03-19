@@ -46,8 +46,10 @@ namespace BeMobile.TrafficBroadcastAnalyzerService
                 hostConfigurator.EnableServiceRecovery(recoveryConfigurator => recoveryConfigurator.RestartService(1));
             });
 
+            
+
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
-        }
+            }
 
         private static void CreateConfigFile()
         {
